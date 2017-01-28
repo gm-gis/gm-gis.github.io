@@ -95,9 +95,9 @@
       var markers = [];
       var geocoder;
       var myMap;
-      var red='maps/bikesnyc/cyclingRed.png'
-      var yellow='maps/bikesnyc/cyclingYellow.png'
-      var green='maps/bikesnyc/bikes/cyclingGreen.png'
+      var red='maps/nycbikes/cyclingRed.png'
+      var yellow='maps/nycbikes/cyclingYellow.png'
+      var green='maps/nycbikes/bikes/cyclingGreen.png'
       
       
 
@@ -176,7 +176,7 @@
         myMap = new google.maps.Map(document.getElementById("map-canvas"),
           mapOptions);
         
-        downloadUrl("getJSON.php", function(data) {
+        downloadUrl("maps/nycbikes/getJSON.php", function(data) {
           obj = JSON.parse(data);
           num = obj.stationBeanList.length;
        
@@ -197,7 +197,7 @@
             var availDocks = obj.stationBeanList[i].availableDocks;
             var lat =  obj.stationBeanList[i].latitude;
             var lng = obj.stationBeanList[i].longitude;
-            if (availBikes>10) {img='maps/bikesnyc/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="maps/bikesnyc/cyclingYellow.png"} else{img='maps/bikesnyc/cyclingRed.png'};
+            if (availBikes>10) {img='maps/nycbikes/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="maps/nycbikes/cyclingYellow.png"} else{img='maps/nycbikes/cyclingRed.png'};
             
             
 
