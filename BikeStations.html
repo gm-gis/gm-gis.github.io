@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> NYC Citi Bike Stations  </title>
+    <meta name="description" content="Interactive map of New York Citi Bike-Share Stations. Find available bikes and docks. " />
+    <meta name="keywords" content="Google Maps, new york, nyc, citi, citi bike, bike-share, bike, stations" />
+    <meta name="author" content="Greg Milbourne">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="3 month">
+    <!-- nyc, map, bike -->
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css"> 
+      
+      html { 
+        height: 100%;
+        width: 100%;
+      }
+
+      input { 
+        color: #0570b0;
+      }
+
+      table, tr, td {
+        text-align: center;
+        border-color: #0570b0;
+        color: #74a9cf;
+        background-color: #f1eef6;
+      }
+
+      body { 
+       height: 100%;
+       margin: 0;
+       padding: 0;
+       background-color:#bdc9e1;
+      }
+
+      th {
+        color: #f1eef6;
+        background-color: #74a9cf;
+      }
+
+ 
+      #map-canvas {
+        height: 93%;
+      }
+      
+      #side_bar {
+        height: 93%;
+      }
+      
+      #Content { 
+        overflow:hidden; 
+        white-space: nowrap;
+        text-align: center
+      }
+
+      #panel {
+        position: absolute;
+        color:#0570b0;
+        top: 60px;
+        left: 100px;
+        z-index: 5;
+        background-color: #f1eef6;
+        padding: 5px;
+        border: 1px solid #0570b0;
+      }
+
+       a:link {
+          color: #0570b0;
+      }
+
+      #legend {
+        background: #f1eef6;
+        font-family: "times";
+        color:#0570b0;
+        font-size: 12;
+        padding: 5px;
+        padding-top: 0px;
+        margin: 20px;
+        border: 1px solid #0570b0;
+      }
+
+
+      
+
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyvpUQVcPA_XqleVNb2jmP77C1VmiDFgg"></script>
+    <script type="text/javascript" src="maps/downloadxml.js"></script>
+    <script type="text/javascript" src="maps/markerclusterer.js"></script>
+    <script type="text/javascript" src="maps/sorttable.js"></script>
+    <script type="text/javascript">
+
+      var infoWindow = new google.maps.InfoWindow();
+      var markers = [];
+      var geocoder;
+      var myMap;
+      var red='maps/cyclingRed.png'
+      var yellow='maps/cyclingYellow.png'
+      var green='maps/cyclingGreen.png'
+      
+      
+
+      function myclick(num) {
+        google.maps.event.trigger(markers[num], "click");
+      }
+
+
+      function createMarker(point,info,map) {
+        var iconURL = img;
+        var iconSize = new google.maps.Size(32,37);
+        var iconOrigin = new google.maps.Point(0,0);
+        var iconAnchor = new google.maps.Point(15,35);
+        
+        var myIcon = {
+          url: iconURL,
+          size: iconSize, 
+          origin: iconOrigin,
+          anchor: iconAnchor
+        };
+       
+
+        var iconShape = [3,3, 28,3, 28,28, 16,36, 3,28];
+        var myMarkerShape = {
+          coord: iconShape,
+          type: 'poly'
+        };        
+
+        var myMarkerOpts = {
+          position: point,
+          map: map,
+          icon: myIcon,
+          shape: myMarkerShape
+        };
+
+
+
+        var marker = new google.maps.Marker(myMarkerOpts);
+       
+        markers.push(marker);
+
+
+
+        
+        google.maps.event.addListener(marker, 'click', function() {
+          map.setCenter(marker.getPosition());
+          infoWindow.close();
+          infoWindow.setContent(info);
+          map.setZoom(17);
+          infoWindow.open(map,marker); 
+        });
+      }
+
+      function initialize() {
+        geocoder=new google.maps.Geocoder();
+
+        var mapTypeControlOpts = {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
+          position: google.maps.ControlPosition.TOP_RIGHT,
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        };
+        
+        var latlng = new google.maps.LatLng(40.742247, -73.955023);
+        var mapOptions = {
+          center: latlng,
+          zoom: 12,
+          mapTypeControlOptions: mapTypeControlOpts,
+          panControl: true,
+          zoomControl: true,
+          scaleControl: true,
+          zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.SMALL
+          }
+        };
+
+        myMap = new google.maps.Map(document.getElementById("map-canvas"),
+          mapOptions);
+        
+        downloadUrl("getJSON.php", function(data) {
+          obj = JSON.parse(data);
+          num = obj.stationBeanList.length;
+       
+                 var side_html = '<table class="sortable" id="sTable" style="border-collapse: collapse" border="1" cellpadding="5"> \
+                            <thead> \
+                                <tr> \
+                                  <th>Station</th> \
+                                  <th>Available Bikes</th> \
+                                  <th>Available Docks</th> \
+                                </tr> \
+                              </thead> \
+                              <tbody>';
+
+          for (var i = 0; i < num; i++) {
+
+            var stationName = obj.stationBeanList[i].stationName ;
+            var availBikes = obj.stationBeanList[i].availableBikes;
+            var availDocks = obj.stationBeanList[i].availableDocks;
+            var lat =  obj.stationBeanList[i].latitude;
+            var lng = obj.stationBeanList[i].longitude;
+            if (availBikes>10) {img='maps/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="maps/cyclingYellow.png"} else{img='maps/cyclingRed.png'};
+            
+            
+
+            var pt = new google.maps.LatLng(lat, lng);
+
+            var html = '<div id=\"Content\"><strong>' + 'Station: '+ stationName + '</strong><br />' + '<caption>' + 'Bikes Available: '  + availBikes + '</caption><br />'+ '<caption>' + 'Docks Available: '  + availDocks + '</caption>'+'</div>';
+            side_html += '<tr> \
+                            <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
+                            <td>' + availBikes + '</td> \
+                            <td>' + availDocks + '</td> \
+                          </tr>';
+                      
+            createMarker(pt,html,myMap);
+          }
+
+          var markerCluster = new MarkerClusterer(myMap, markers);
+
+          side_html += '</tbody> \
+                  </table>';
+
+          //legend icons
+          var icons = {
+              b1: {
+                count: 'Less Than 5 Bikes',
+                source: red
+              },
+              b2: {
+                count: 'Between 5 and 10 Bikes',
+                source: yellow
+              },
+              b3: {
+                count: 'Greater Than 10 Bikes',
+                source: green
+              }
+          };
+
+
+          //add legeng
+          var legend = document.getElementById('legend');
+          for (var key in icons) {
+            var type = icons[key];
+            var name = type.count;
+            var source = type.source;
+            var div = document.createElement('div');
+            div.innerHTML = '<img src="' + source + '"> ' + name;
+            legend.appendChild(div);
+          }
+
+          myMap.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+            document.getElementById('legend'));
+
+          document.getElementById("side_bar").innerHTML = side_html;
+
+          //Make table Sortable
+          var newTableObject = document.getElementById("sTable");
+          sorttable.makeSortable(newTableObject);
+          var myTH = document.getElementsByTagName("th")[1];
+          sorttable.innerSortFunction.apply(myTH, []);
+         });
+      }
+
+     
+
+
+      function codeAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            myMap.setCenter(results[0].geometry.location);
+            var searchMarker = new google.maps.Marker({
+                map: myMap,
+                position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      } 
+
+
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="panel">
+      <input id="address" type="text" value="">
+      <input type="button" value="Search" onclick="codeAddress()">
+    </div>
+    <h1 style= "margin-left:10px; margin-bottom:0px; margin-top:0px; color:#0570b0">NYC Citi Bike Stations</h1>
+    <div id="map-canvas" style="width: 65%; position: absolute; left: 10px; border: 3px solid #0570b0" ></div>
+    <div id="side_bar" style="width: 32%; position: absolute; right: 10px; overflow:auto; border: 3px solid #0570b0"></div>
+    <div id="legend"><h3>Citi Bike Stations</h3></div>
+  </body>
+</html>
