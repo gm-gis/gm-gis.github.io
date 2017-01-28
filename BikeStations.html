@@ -85,19 +85,19 @@
       
 
     </style>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6SVUZkyXg1avnChyUwhDJoypvZkw6_LQ"></script>
-    <script type="text/javascript" src="maps/downloadxml.js"></script>
-    <script type="text/javascript" src="maps/markerclusterer.js"></script>
-    <script type="text/javascript" src="maps/sorttable.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/bikesnyc/api/js?key=AIzaSyD6SVUZkyXg1avnChyUwhDJoypvZkw6_LQ"></script>
+    <script type="text/javascript" src="maps/bikesnyc/downloadxml.js"></script>
+    <script type="text/javascript" src="maps/bikesnyc/markerclusterer.js"></script>
+    <script type="text/javascript" src="maps/bikesnyc/sorttable.js"></script>
     <script type="text/javascript">
 
       var infoWindow = new google.maps.InfoWindow();
       var markers = [];
       var geocoder;
       var myMap;
-      var red='maps/cyclingRed.png'
-      var yellow='maps/cyclingYellow.png'
-      var green='maps/cyclingGreen.png'
+      var red='maps/bikesnyc/cyclingRed.png'
+      var yellow='maps/bikesnyc/cyclingYellow.png'
+      var green='maps/bikesnyc/cyclingGreen.png'
       
       
 
@@ -197,7 +197,7 @@
             var availDocks = obj.stationBeanList[i].availableDocks;
             var lat =  obj.stationBeanList[i].latitude;
             var lng = obj.stationBeanList[i].longitude;
-            if (availBikes>10) {img='maps/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="maps/cyclingYellow.png"} else{img='maps/cyclingRed.png'};
+            if (availBikes>10) {img='maps/bikesnyc/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="maps/bikesnyc/cyclingYellow.png"} else{img='maps/bikesnyc/cyclingRed.png'};
             
             
 
