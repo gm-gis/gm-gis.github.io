@@ -265,7 +265,7 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
 
  var routeJson = directionsLayer.toGeoJSON();
 
- var routeLayer = L.mapbox.featureLayer(routeJson).addTo(map)
+ var routeLayer = L.mapbox.featureLayer(routeJson).addTo(map);
 
  routeLayer.on('hover', function (e) {
    // // Get the GeoJSON from libraryFeatures and cameraFeatures
