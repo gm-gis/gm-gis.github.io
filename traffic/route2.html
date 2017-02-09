@@ -250,7 +250,7 @@ var cameras= {
     };
 
 
-var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map)
+var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
 
 // Bind a popup to each feature in cameraLayer and libraryLayer
  cameraLayer.eachLayer(function (layer) {
@@ -265,18 +265,19 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map)
 
  var routeJson = directionsLayer.toGeoJSON();
 
- var routeMarker = routeJson.addTo(map);
+ var routeLayer = L.mapbox.featureLayer(routeJson).addTo(mapbox)
 
- // directionsLayer.on('hover', function (e) {
- //   // Get the GeoJSON from libraryFeatures and cameraFeatures
- //   var directionsFeatures = directionsLayer.toGeoJSON();
- //   // Using Turf, find the nearest camera to library clicked
- //   var nearestcamera = turf.nearest(e.layer.feature, cameraFeatures);
- //   // Change the nearest camera to a large marker
- //   nearestcamera.properties['marker-size'] = 'large';
- //   // Add the new GeoJSON to cameraLayer
- //   cameraLayer.setGeoJSON(cameraFeatures);
- // });
+ routeLayer.on('hover', function (e) {
+   // // Get the GeoJSON from libraryFeatures and cameraFeatures
+   // var directionsFeatures = directionsLayer.toGeoJSON();
+   // Using Turf, find the nearest camera to library clicked
+   // var nearestcamera = turf.nearest(e.layer.feature, cameraFeatures);
+   // // Change the nearest camera to a large marker
+   // nearestcamera.properties['marker-size'] = 'large';
+   // // Add the new GeoJSON to cameraLayer
+   // cameraLayer.setGeoJSON(cameraFeatures);
+   console.log('hovered over route')
+ });
 
 console.log(directions.routes.geometry)
 </script>
