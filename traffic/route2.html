@@ -98,7 +98,7 @@ var lines = [{
     "coordinates": [ -77.016182522563327, 38.904886570615865 ],
 }];
 
-var linesLayer = L.geoJSON(lines).addTo(map);
+var linesLayer = L.mapbox.featureLayer(lines).addTo(map);
 
 var cameras= {
     "type": "FeatureCollection",
