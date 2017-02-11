@@ -17,7 +17,7 @@
 
 
 <style>
-#inputs,
+/*#inputs,
 #errors,
 #directions {
     position: absolute;
@@ -49,7 +49,7 @@
     background: rgba(0,0,0,.25);
     top: 90px;
     left: 10px;
-}
+}*/
 
 </style>
 
@@ -91,15 +91,22 @@ map.attributionControl.setPosition('bottomleft');
 // var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
 //     .addTo(map);
 
-var lines = [
-{
-    "type": "LineString",
-    "coordinates": [[ -77.031953032048932, 38.917005578356324 ],[ -77.531953032048932, 38.417005578356324 ]]
-},
-{
-    "type": "LineString",
-    "coordinates": [[ -77.016182522563327, 38.904886570615865 ],[ -77.331953032048932, 38.717005578356324 ]]
-}];
+var lines = {
+
+    type:'FeatureCollection',
+    features:[
+        {
+            "type": 'Feature',
+            "geometry":{
+                    "type": "LineString",
+                    "coordinates": [ [ -77.031953032048932, 38.917005578356324 ] , [ -77.531953032048932, 38.417005578356324 ] ]},
+            'properties': {},
+            "type": 'Feature',
+            "geometry":{
+                    "type": "LineString",
+                    "coordinates": [[ -77.016182522563327, 38.904886570615865 ],[ -77.331953032048932, 38.717005578356324 ]]},
+            'properties': {},       
+        }];
 
 var linesLayer = L.mapbox.featureLayer(lines).addTo(map);
 
