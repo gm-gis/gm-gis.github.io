@@ -139,7 +139,7 @@ var pointsLayer = L.mapbox.featureLayer(pts).addTo(map);
 
 var lineBuffer=turf.buffer(lines, 100, 'feet');
 result = turf.featurecollection([lines,lineBuffer]);
-// var lineBufferShape=L.geoJson(lineBuffer).addTo(map);
+var lineBufferShape=L.geoJson(lineBuffer).addTo(map);
 
 var cameras= {
     "type": "FeatureCollection",
