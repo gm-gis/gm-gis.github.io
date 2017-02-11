@@ -287,7 +287,7 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
 
  // Open popups on hover
 cameraLayer.on('mouseover', function (e) {
-  e.layer.openPopup();
+  e.layer.openPopup()
  });
 
  // var routeJson = directionsLayer.toGeoJSON();
