@@ -91,6 +91,15 @@ var directionsRoutesControl = L.mapbox.directions.routesControl('routes', direct
 var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
     .addTo(map);
 
+var lines = [{
+    "type": "LineString",
+    "coordinates": [ -77.031953032048932, 38.917005578356324 ],
+    "type": "LineString",
+    "coordinates": [ -77.016182522563327, 38.904886570615865 ],
+}];
+
+var linesLayer = L.geoJSON(lines).addTo(map);
+
 var cameras= {
     "type": "FeatureCollection",
     "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
