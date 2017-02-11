@@ -100,13 +100,17 @@ var lines = {
             "geometry":{
                     "type": "LineString",
                     "coordinates": [ [ -77.031953032048932, 38.517005578356324 ] , [ -77.531953032048932, 38.417005578356324 ] ]},
-            'properties': {},
+            'properties': {}
+        },
+        {
             "type": 'Feature',
             "geometry":{
                     "type": "LineString",
                     "coordinates": [[ -77.036182522563327, 38.614886570615865 ],[ -77.530053032048932, 38.517005578356324 ]]},
-            'properties': {},       
-        }]};
+            'properties': {}
+        }       
+        ]
+};
 
 var linesLayer = L.mapbox.featureLayer(lines).addTo(map);
 
