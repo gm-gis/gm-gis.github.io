@@ -272,6 +272,10 @@ var cameras= {
     ]
     };
 
+for (var i = 0; i < cameras.features.length; i++) {
+    cameras.features[i].properties['marker-color'] = '#DC143C';
+    cameras.features[i].properties['marker-size'] = 'small';
+  }
 
 var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
 
@@ -290,7 +294,7 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
 
  // var routeLayer = L.mapbox.featureLayer(routeJson).addTo(map);
 
- linesLayer.on('mouseover', function (e) {
+ linesLayer.on('click', function (e) {
    // // Get the GeoJSON from libraryFeatures and cameraFeatures
    var cameraFeatures = cameraLayer.getGeoJSON();
    // Using Turf, find the nearest camera to library clicked
