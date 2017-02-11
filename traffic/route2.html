@@ -91,11 +91,14 @@ var directionsRoutesControl = L.mapbox.directions.routesControl('routes', direct
 var directionsInstructionsControl = L.mapbox.directions.instructionsControl('instructions', directions)
     .addTo(map);
 
-var lines = [{
+var lines = [
+{
     "type": "LineString",
-    "coordinates": [ -77.031953032048932, 38.917005578356324 ],
+    "coordinates": [[ -77.031953032048932, 38.917005578356324 ],[ -77.531953032048932, 38.417005578356324 ]]
+},
+{
     "type": "LineString",
-    "coordinates": [ -77.016182522563327, 38.904886570615865 ],
+    "coordinates": [[ -77.016182522563327, 38.904886570615865 ],[ -77.331953032048932, 38.717005578356324 ]]
 }];
 
 var linesLayer = L.mapbox.featureLayer(lines).addTo(map);
