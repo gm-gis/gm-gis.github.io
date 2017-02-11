@@ -262,15 +262,17 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
  cameraLayer.on('mouseover', function (e) {
    e.layer.openPopup();
    console.log('pop-up fired');
+   console.log(routeJson);
  });
 
  var routeJson = directionsLayer.toGeoJSON();
 
  console.log(routeJson);
+ console.log(routeLayer):
 
  var routeLayer = L.mapbox.featureLayer(routeJson).addTo(map);
 
- routeJson.on('mouseover', function (e) {
+ routeLayer.on('mouseover', function (e) {
    // // Get the GeoJSON from libraryFeatures and cameraFeatures
    // var directionsFeatures = directionsLayer.toGeoJSON();
    // Using Turf, find the nearest camera to library clicked
@@ -280,6 +282,7 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
    // Add the new GeoJSON to cameraLayer
    cameraLayer.setGeoJSON(cameraFeatures);
    console.log('hovered over route');
+
  });
 
 // console.log(directions.routes.geometry)
