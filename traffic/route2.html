@@ -112,7 +112,30 @@ var lines = {
         ]
 };
 
+var pts = {
+
+    type:'FeatureCollection',
+    "features":[
+        {
+            "type": 'Feature',
+            "geometry":{
+                    "type": "Point",
+                    "coordinates": [ -77.015953032048932, 38.8917005578356324 ] },
+            'properties': {}
+        },
+        {
+            "type": 'Feature',
+            "geometry":{
+                    "type": "Point",
+                    "coordinates": [ -77.530053032048932, 38.910005578356324 ]},
+            'properties': {}
+        }       
+        ]
+};
+
 var linesLayer = L.mapbox.featureLayer(lines).addTo(map);
+
+var pointsLayer = L.mapbox.featureLayer(pts).addTo(map);
 
 var cameras= {
     "type": "FeatureCollection",
@@ -294,7 +317,7 @@ cameraLayer.on('mouseover', function (e) {
 
  // var routeLayer = L.mapbox.featureLayer(routeJson).addTo(map);
 
-linesLayer.on('click', function (e) {
+pointsLayer.on('click', function (e) {
    // // Get the GeoJSON from libraryFeatures and cameraFeatures
    var cameraFeatures = cameraLayer.getGeoJSON();
    // Using Turf, find the nearest camera to library clicked
