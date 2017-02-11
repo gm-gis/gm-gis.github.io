@@ -262,7 +262,9 @@ var cameraLayer = L.mapbox.featureLayer(cameras).addTo(map);
  cameraLayer.on('mouseover', function (e) {
    e.layer.openPopup();
    console.log('pop-up fired');
-   console.log(routeJson);
+   console.log('routeJson=' + routeJson);
+   console.log('routeLayer=' + routeLayer);
+   console.log('cameras=' + cameraLayer[0]);
  });
 
  var routeJson = directionsLayer.toGeoJSON();
