@@ -53,7 +53,7 @@
 
  
       #map-canvas {
-        height: 93%;
+        height: 100%;
       }
       
       #side_bar {
@@ -69,7 +69,7 @@
       #panel {
         position: absolute;
         color:#0570b0;
-        top: 5px;
+        top: 2px;
         left: 5px;
         z-index: 5;
         background-color: #f1eef6;
@@ -88,11 +88,10 @@
         font-size: 12;
         padding: 5px;
         padding-top: 0px;
-        margin: 5px;
         border: 1px solid #0570b0;
         position: absolute;
-        left: 2px;
-        bottom: 1px;
+        left: 5px;
+        bottom: 5px;
         z-index: 5;
 
       }
@@ -305,7 +304,7 @@
         <input id="address" type="text" value="" >
         <input type="button" value="Search" onclick="codeAddress()" >
       </div>
-      <div id="map-canvas" style="width: 65%; position: absolute; left: 10px; border: 3px solid #0570b0" ></div>
+      <div id="map-canvas" style="width: 65%; position: absolute; margin:px; left: 10px; border: 3px solid #0570b0" ></div>
       <div id="legend"><h4>Citi Bike Stations</h4></div>
     </div>
     <div id="side_bar" style="width: 32%; position: absolute; right: 10px; overflow:auto; border: 3px solid #0570b0"></div>
