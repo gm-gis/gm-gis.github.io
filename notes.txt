@@ -1,0 +1,3 @@
+dynamic legend element sizing
+no vertical scrolly even when resize - look into H1 % sizing
+media queries
