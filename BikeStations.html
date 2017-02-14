@@ -9,7 +9,7 @@
     <meta name="revisit-after" content="3 month">
     <!-- nyc, map, bike -->
 
-    <meta name="viewport" content="width+=evice-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css"> 
       
       html { 
@@ -45,12 +45,11 @@
         background-color: #74a9cf;
       }
 
-
-      #container{
-        width: 100%;
+      #container {
         height: 100%;
+        width: 65%;
         position: relative;
-      }
+            }
 
  
       #map-canvas {
@@ -68,13 +67,14 @@
       }
 
       #panel {
-        position: relative;
+        position: absolute;
         color:#0570b0;
+        top: 60px;
+        left: 100px;
         z-index: 5;
         background-color: #f1eef6;
         padding: 5px;
         border: 1px solid #0570b0;
-        margin:4px;
       }
 
        a:link {
@@ -86,14 +86,13 @@
         font-family: "times";
         color:#0570b0;
         font-size: 12;
-        padding: 2px;
+        padding: 5px;
         padding-top: 0px;
-        margin: 4px;
+        margin: 20px;
         border: 1px solid #0570b0;
-        position: relative;
-        left: 5px;
-        bottom: 5px;
-        z-index: 5;
+        position: absolute;
+        left: 2px;
+        bottom: 10px;
 
       }
 
@@ -300,15 +299,14 @@
   </head>
   <body onload="initialize()">
     <h1 style= "margin-left:10px; margin-bottom:0px; margin-top:0px; color:#0570b0">NYC Citi Bike Stations</h1>
-    <div id="Container">
-      <div id="panel"style="position: absolute; top: 2px: margin: 3px">
-          <input id="address" type="text" value="" >
-          <input type="button" value="Search" onclick="codeAddress()" >
+    <div id="container">
+      <div id="panel"style="position: absolute; top:50px; left: 22px">
+        <input id="address" type="text" value="" >
+        <input type="button" value="Search" onclick="codeAddress()" >
       </div>
-      <div id="map-canvas" style="width: 65%; position: relative; left: 5px; border: 3px solid #0570b0"></div>
+      <div id="map-canvas" style="width: 65%; position: absolute; left: 10px; border: 3px solid #0570b0" ></div>
       <div id="legend"><h4>Citi Bike Stations</h4></div>
+      <div id="side_bar" style="width: 32%; position: absolute; right: 10px; overflow:auto; border: 3px solid #0570b0"></div>
     </div>
-    <div id="side_bar" style="width: 32%; position: relative; right: 5px; overflow:auto; border: 3px solid #0570b0"></div>
-    
   </body>
 </html>
