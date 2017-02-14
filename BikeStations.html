@@ -54,16 +54,27 @@
  
       #map-canvas {
         height: 100%;
+        width: 65%;
+        position: absolute;
+        margin: 5px; 
+        left: 10px;
+        border: 3px; solid #0570b0;
       }
       
       #side_bar {
         height: 93%;
+        width: 32%;
+        position: absolute;
+        right: 10px;
+        overflow:auto;
+        border: 3px solid #0570b0;
+        float: right;
       }
       
       #Content { 
         overflow:hidden; 
         white-space: nowrap;
-        text-align: center
+        text-align: center;
       }
 
       #panel {
@@ -300,13 +311,13 @@
   <body onload="initialize()">
     <h1 style= "margin-left:10px; margin-bottom:0px; margin-top:0px; color:#0570b0">NYC Citi Bike Stations</h1>
     <div id="container">
-      <div id="panel"style="position: absolute; top:50px; left: 22px">
+      <div id="panel">
         <input id="address" type="text" value="" >
         <input type="button" value="Search" onclick="codeAddress()" >
       </div>
-      <div id="map-canvas" style="width: 65%; position: absolute; margin:px; left: 10px; border: 3px solid #0570b0" ></div>
+      <div id="map-canvas"></div>
       <div id="legend"><h4>Citi Bike Stations</h4></div>
     </div>
-    <div id="side_bar" style="width: 32%; position: absolute; right: 10px; overflow:auto; border: 3px solid #0570b0"></div>
+    <div id="side_bar"></div>
   </body>
 </html>
