@@ -49,7 +49,7 @@ th {
 
 #side_bar {
   height: 300px;
-  width: 1px;
+  width: 1%;
   position: relative;
   right: 1%;
   overflow:scroll;
