@@ -7,7 +7,7 @@ input {
   color: #0570b0;
 }
 
-table, tr, td {
+table, tr, td, th {
   text-align: center;
   border-color: #0570b0;
   color: #74a9cf;
