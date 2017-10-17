@@ -48,8 +48,8 @@ th {
 }
 
 #side_bar {
-  height: 100px;
-  width: 50%;
+  height: 300px;
+  width: 1px;
   position: relative;
   right: 1%;
   overflow:scroll;
