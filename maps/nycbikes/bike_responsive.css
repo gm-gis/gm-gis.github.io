@@ -49,7 +49,7 @@ th {
 
 h1 #side_bar {
   height: 300px;
-  width: 100%;
+  width: 50%;
   position: relative;
   right: 1%;
   overflow:auto;
@@ -78,9 +78,6 @@ h1 #side_bar {
   border: 1px solid #0570b0;
 }
 
-.table-fit {
-  width: 1%;
-}
 
  a:link {
     color: #0570b0;
