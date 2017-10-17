@@ -1,102 +1,99 @@
-    <style type="text/css"> 
-      
-      html { 
-        height: 100%;
-        width: 100%;
-      }
+html { 
+  height: 100%;
+  width: 100%;
+}
 
-      input { 
-        color: #0570b0;
-      }
+input { 
+  color: #0570b0;
+}
 
-      table, tr, td {
-        text-align: center;
-        border-color: #0570b0;
-        color: #74a9cf;
-        background-color: #f1eef6;
-      }
+table, tr, td, th {
+  text-align: center;
+  border-color: #0570b0;
+  color: #74a9cf;
+  background-color: #f1eef6;
+}
 
-      h4{
-          padding: 0px;
-          margin: 2px;
-      }
+h4{
+    padding: 0px;
+    margin: 2px;
+}
 
-      body { 
-       height: 100%;
-       margin: 0;
-       padding: 0;
-       background-color:#bdc9e1;
-      }
+body { 
+ height: 100%;
+ margin: 0;
+ padding: 0;
+ background-color:#bdc9e1;
+}
 
-      th {
-        color: #f1eef6;
-        background-color: #74a9cf;
-      }
+th {
+  color: #f1eef6;
+  background-color: #74a9cf;
+}
 
-      #container {
-        height: 93%;
-        width: 100%;
-        position: absolute;
-            }
-
- 
-      #map-canvas {
-        height: 300px;
-        width: 100%;
-        position: relative;
-        left: 1%;
-        border: 3px solid #0570b0;
-       /* float:left;*/
-      }
-      
-      #side_bar {
-        height: 300px;
-        width: 100%;
-        position: relative;
-        right: 1%;
-        overflow:auto;
-        border: 3px solid #0570b0;
-       /* float: right;*/
-      }
-      
-      #Content { 
-        overflow:hidden; 
-        white-space: nowrap;
-        text-align: center;
-      }
-
-      #panel {
-        position: relative;
-        color:#0570b0;
-        top: 2%;
-        left: 2%;
-        z-index: -1;
-        padding: 5px;
-        background-color: #f1eef6;
-        border: 1px solid #0570b0;
-      }
-
-       a:link {
-          color: #0570b0;
-      }
-
-      #legend {
-        background: #f1eef6;
-        font-family: "times";
-        color:#0570b0;
-        font-size: medium;
-        border: 1px solid #0570b0;
-        position: absolute;
-        left: 2%;
-        bottom: 2%;
-        z-index: -1;
-        padding: 2px;
-        /*height: 17%;
-        width: 10%;*/
-
+#container {
+  height: 93%;
+  width: 100%;
+  position: absolute;
       }
 
 
-      
+#map-canvas {
+  height: 300px;
+  width: 100%;
+  position: relative;
+  left: 1%;
+  border: 3px solid #0570b0;
+ /* float:left;*/
+}
 
-    </style>
+#side_bar {
+  height: 300px;
+  width: 100%;
+  position: relative;
+  right: 1%;
+  overflow:auto;
+  border: 3px solid #0570b0;
+ /* float: right;*/
+}
+
+#side_bar th {
+  text-align: center;
+}
+
+#Content { 
+  overflow:hidden; 
+  white-space: nowrap;
+  text-align: center;
+}
+
+#panel {
+  position: relative;
+  color:#0570b0;
+  top: 2%;
+  left: 2%;
+  z-index: -1;
+  padding: 5px;
+  background-color: #f1eef6;
+  border: 1px solid #0570b0;
+}
+
+ a:link {
+    color: #0570b0;
+}
+
+#legend {
+  background: #f1eef6;
+  font-family: "times";
+  color:#0570b0;
+  font-size: medium;
+  border: 1px solid #0570b0;
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+  z-index: -1;
+  padding: 2px;
+  /*height: 17%;
+  width: 10%;*/
+
+}
