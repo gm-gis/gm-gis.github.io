@@ -52,7 +52,7 @@ th {
   width: 50%;
   position: relative;
   right: 1%;
-  overflow:scroll;
+  overflow:auto;
   border: 3px solid #0570b0;
  /* float: right;*/
 }
