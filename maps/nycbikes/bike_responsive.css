@@ -47,12 +47,12 @@ th {
  /* float:left;*/
 }
 
-h1 #side_bar {
+#side_bar {
   height: 100px;
   width: 50%;
   position: relative;
   right: 1%;
-  overflow:auto;
+  overflow:scroll;
   border: 3px solid #0570b0;
  /* float: right;*/
 }
