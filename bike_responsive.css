@@ -57,6 +57,10 @@ th {
  /* float: right;*/
 }
 
+#side_bar th {
+  text-align: center;
+}
+
 #Content { 
   overflow:hidden; 
   white-space: nowrap;
