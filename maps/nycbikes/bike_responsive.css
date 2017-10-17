@@ -47,6 +47,10 @@ th {
  /* float:left;*/
 }
 
+h1 {
+  left: 1%;
+}
+
 #side_bar {
   height: 300px;
   width: 50%;
