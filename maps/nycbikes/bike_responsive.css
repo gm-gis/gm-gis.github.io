@@ -47,7 +47,7 @@ th {
  /* float:left;*/
 }
 
-#side_bar {
+h1 #side_bar {
   height: 300px;
   width: 100%;
   position: relative;
@@ -76,6 +76,10 @@ th {
   padding: 5px;
   background-color: #f1eef6;
   border: 1px solid #0570b0;
+}
+
+.table-fit {
+  width: 1px;
 }
 
  a:link {
