@@ -54,6 +54,7 @@ th {
   right: 1%;
   overflow:auto;
   border: 3px solid #0570b0;
+  white-space: nowrap;
  /* float: right;*/
 }
 
