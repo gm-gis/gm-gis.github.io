@@ -56,9 +56,7 @@ h1 {
   height: 300px;
   width: min-content;
   position: relative;
-  /*right: 1%;
-  left: 1%;*/
-  margin: 3px;
+  margin: auto;
   overflow:auto;
   border: 3px solid #0570b0;
  /* float: right;*/
@@ -94,15 +92,14 @@ h1 {
   background: #f1eef6;
   font-family: "times";
   color:#0570b0;
+  width: min-content;
   font-size: medium;
   border: 1px solid #0570b0;
   position: relative;
-  /*left: 2%;
-  bottom: 2%;*/
+  margin: auto;
   margin: 3px;
   z-index: -1;
   padding: 2px;
-  /*height: 17%;
-  width: 10%;*/
+
 
 }
