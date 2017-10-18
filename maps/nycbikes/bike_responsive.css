@@ -43,7 +43,7 @@ th {
   height: 300px;
   width: 100%;
   position: relative;
-  left: 1%;
+  margin :2%;
   border: 3px solid #0570b0;
  /* float:left;*/
 }
@@ -56,8 +56,9 @@ h1 {
   height: 300px;
   width: min-content;
   position: relative;
-  right: 1%;
-  left: 1%;
+  /*right: 1%;
+  left: 1%;*/
+  margin: 2px;
   overflow:auto;
   border: 3px solid #0570b0;
  /* float: right;*/
@@ -95,9 +96,10 @@ h1 {
   color:#0570b0;
   font-size: medium;
   border: 1px solid #0570b0;
-  position: absolute;
-  left: 2%;
-  bottom: 2%;
+  position: relative;
+  /*left: 2%;
+  bottom: 2%;*/
+  margin: 2px;
   z-index: -1;
   padding: 2px;
   /*height: 17%;
