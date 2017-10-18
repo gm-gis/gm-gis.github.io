@@ -54,7 +54,7 @@ h1 {
 
 #side_bar {
   height: 300px;
-  width: min-content;
+  width: max-content;
   position: relative;
   margin: auto;
   overflow:auto;
@@ -92,12 +92,11 @@ h1 {
   background: #f1eef6;
   font-family: "times";
   color:#0570b0;
-  width: min-content;
+  width: max-content;
   font-size: medium;
   border: 1px solid #0570b0;
   position: relative;
   margin: auto;
-  margin: 3px;
   z-index: -1;
   padding: 2px;
 
