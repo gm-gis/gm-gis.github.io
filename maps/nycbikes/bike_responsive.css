@@ -43,7 +43,7 @@ th {
   height: 300px;
   width: 100%;
   position: relative;
-  margin: 3px;
+  margin: auto;
   border: 3px solid #0570b0;
  /* float:left;*/
 }
