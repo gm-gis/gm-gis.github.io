@@ -58,7 +58,7 @@ h1 {
   position: relative;
   /*right: 1%;
   left: 1%;*/
-  margin: 2px;
+  margin: 3px;
   overflow:auto;
   border: 3px solid #0570b0;
  /* float: right;*/
@@ -99,7 +99,7 @@ h1 {
   position: relative;
   /*left: 2%;
   bottom: 2%;*/
-  margin: 2px;
+  margin: 3px;
   z-index: -1;
   padding: 2px;
   /*height: 17%;
