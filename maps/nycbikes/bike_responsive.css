@@ -13,6 +13,7 @@ table, tr, td, th {
   color: #74a9cf;
   background-color: #f1eef6;
   padding: 2px;
+  white-space: nowrap;
 }
 
 
@@ -44,8 +45,7 @@ th {
   height: 300px;
   width: 100%;
   position: relative;
-  margin: auto;
-  margin-bottom: 5px;
+  margin: 5px;
   border: 3px solid #0570b0;
  /* float:left;*/
 }
@@ -58,8 +58,7 @@ h1 {
   height: 300px;
   width: min-content;
   position: relative;
-  margin: auto;
-  margin-bottom: 5px;
+  margin: 5px;
   overflow:auto;
   border: 3px solid #0570b0;
  /* float: right;*/
@@ -99,7 +98,7 @@ h1 {
   font-size: medium;
   border: 1px solid #0570b0;
   position: relative;
-  margin: auto;
+  margin: 5px;
   border: 3px solid #0570b0;
   z-index: -1;
   padding: 2px;
