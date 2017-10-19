@@ -99,8 +99,7 @@ h1 {
   border: 1px solid #0570b0;
   position: relative;
   margin: auto;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  border: 1px solid #0570b0;
   z-index: -1;
   padding: 2px;
 
