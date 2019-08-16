@@ -208,7 +208,7 @@
         var latlng = new google.maps.LatLng(38.875965, -77.184693);
         var mapOptions = {
           center: latlng,
-          zoom: 12,
+          zoom: 10,
           mapTypeControlOptions: mapTypeControlOpts,
           panControl: true,
           zoomControl: true,
@@ -237,12 +237,12 @@
 
           for (var i = 0; i < num; i++) {
 
-            var contactName = contacts_array[i].FirstName + contacts_array[i].LastName;
+            var contactName = contacts_array[i].FirstName + " " contacts_array[i].LastName;
             var city = contacts_array[i].MailingCity
             var state = contacts_array[i].MailingState
             var lat =  contacts_array[i].Latitude_MapAnything__c;
             var lng = contacts_array[i].Longitude_MapAnything__c;
-         	img='/maps/nycbikes/cyclingRed.png'
+         	img='person.png'
             
             
 
