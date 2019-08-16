@@ -205,7 +205,7 @@
           style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
         };
         
-        var latlng = new google.maps.LatLng(40.742247, -74.00);
+        var latlng = new google.maps.LatLng(38.875965, -77.184693);
         var mapOptions = {
           center: latlng,
           zoom: 12,
@@ -223,7 +223,7 @@
         
         downloadUrl("/maps/nycbikes/getJSON.php", function(data) {
           obj = JSON.parse(data);
-          num = obj.stationBeanList.length;
+          num = contacts_array.length;
        
                  var side_html = '<table class="sortable" id="sTable" style="border-collapse: collapse" border="1" cellpadding="5"> \
                             <thead> \
@@ -237,18 +237,18 @@
 
           for (var i = 0; i < num; i++) {
 
-            var stationName = obj.stationBeanList[i].stationName ;
-            var availBikes = obj.stationBeanList[i].availableBikes;
-            var availDocks = obj.stationBeanList[i].availableDocks;
-            var lat =  obj.stationBeanList[i].latitude;
-            var lng = obj.stationBeanList[i].longitude;
-            if (availBikes>10) {img='/maps/nycbikes/cyclingGreen.png'} else if (availBikes<=10 && availBikes>=5) {img="/maps/nycbikes/cyclingYellow.png"} else{img='/maps/nycbikes/cyclingRed.png'};
+            var stationName = contacts_array[i].FirstName + contacts_array[i].LastName;
+            var city = contacts_array[i].MailingCity
+            var state = contacts_array[i].MailingState
+            var lat =  contacts_array[i].Latitude;
+            var lng = contacts_array[i].longitude;
+         	img='/maps/nycbikes/cyclingRed.png'
             
             
 
             var pt = new google.maps.LatLng(lat, lng);
 
-            var html = '<div id=\"Content\"><strong>' + 'Station: '+ stationName + '</strong><br />' + '<caption>' + 'Bikes Available: '  + availBikes + '</caption><br />'+ '<caption>' + 'Docks Available: '  + availDocks + '</caption>'+'</div>';
+            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ stationName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
             side_html += '<tr> \
                             <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
                             <td>' + availBikes + '</td> \
