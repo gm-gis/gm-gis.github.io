@@ -18,6 +18,7 @@
     <link rel="stylesheet" media="(orientation: landscape)" href="maps/nyc/bikes/landscape.css"> -->
 
 
+
     <style type="text/css"> 
       
       html { 
@@ -124,6 +125,15 @@
     <script type="text/javascript" src="/maps/nycbikes/downloadxml.js"></script>
     <script type="text/javascript" src="/maps/nycbikes/markerclusterer.js"></script>
     <script type="text/javascript" src="/maps/nycbikes/sorttable.js"></script>
+    <script type="text/javascript" src="contacts.json"></script>
+    <script>
+    	var contacts_array = contacts.json;
+    	for(var i = 0; i < json.length; i++) {
+    		var obj = json[i];
+    		console.log(obj.FirstName);
+}
+	</script>
+
     <script type="text/javascript">
 
       var infoWindow = new google.maps.InfoWindow();
