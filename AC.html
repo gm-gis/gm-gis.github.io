@@ -237,7 +237,7 @@
 
           for (var i = 0; i < num; i++) {
 
-            var stationName = contacts_array[i].FirstName + contacts_array[i].LastName;
+            var contactName = contacts_array[i].FirstName + contacts_array[i].LastName;
             var city = contacts_array[i].MailingCity
             var state = contacts_array[i].MailingState
             var lat =  contacts_array[i].Latitude;
@@ -248,7 +248,7 @@
 
             var pt = new google.maps.LatLng(lat, lng);
 
-            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ stationName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
+            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
             side_html += '<tr> \
                             <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
                             <td>' + availBikes + '</td> \
@@ -328,7 +328,7 @@
     </script>
   </head>
   <body onload="initialize()">
-    <h1 style= "margin-left:12px; margin-bottom:0px; margin-top:0px; color:#0570b0">Contacts</h1>
+    <h1 style= "margin-left:12px; margin-bottom:0px; margin-top:0px; color:#0570b0">Contacts?</h1>
     <div id="container">
       <div id="panel">
         <input id="address" type="text" value="" >
