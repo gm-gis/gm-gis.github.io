@@ -15,8 +15,11 @@ csvfile = open('Contact.csv', 'r', encoding='utf-8')
 jsonfile = open('Contacts_pandas.json', 'w', encoding='utf-8')
 
 df = pd.read_csv('Contact.csv')
-
-
 out_json = df.to_json(orient='records')
 
+jsonfile.write('contacts_list=')
+jsonfile.close()
+
+jsonfile = open('Contacts_pandas.json', 'a', encoding='utf-8')
 jsonfile.write(out_json)
+jsonfile.close()
