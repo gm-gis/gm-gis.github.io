@@ -249,11 +249,11 @@
             var pt = new google.maps.LatLng(lat, lng);
 
             var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
-            side_html += '<tr> \
-                            <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
-                            <td>' + availBikes + '</td> \
-                            <td>' + availDocks + '</td> \
-                          </tr>';
+            // side_html += '<tr> \
+            //                 <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
+            //                 <td>' + availBikes + '</td> \
+            //                 <td>' + availDocks + '</td> \
+            //               </tr>';
                       
             createMarker(pt,html,myMap);
           }
