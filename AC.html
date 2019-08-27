@@ -247,21 +247,21 @@
             var state = contacts_array[i].MailingState;
             var lat =  contacts_array[i].MailingLatitude;
             var lng = contacts_array[i].MailingLongitude;
-            group = contacts_array[i].Groups__c;
+            var group = contacts_array[i].Groups__c;
          	img='maps/nycbikes/cyclingRed.png'
             
             text = contactName
 
             var pt = new google.maps.LatLng(lat, lng);
 
-            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'Group: '  + group + '</caption><br />'+ '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption></div>';
+            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption> +</div>';
             // side_html += '<tr> \
             //                 <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
             //                 <td>' + availBikes + '</td> \
             //                 <td>' + availDocks + '</td> \
             //               </tr>';
             
-            if (city || state) && (lat || lng){
+            if (city || state) && (lat||lng){
 
             	createMarker(pt,html,myMap,text);
 
