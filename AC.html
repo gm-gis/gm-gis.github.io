@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> AC  </title>
-    <meta name="description" content="AC" />
-    <meta name="keywords" content="AC" />
+    <title> NYC Citi Bike Stations  </title>
+    <meta name="description" content="Interactive map of New York Citi Bike-Share Stations. Find available bikes and docks. " />
+    <meta name="keywords" content="Google Maps, new york, nyc, citi, citi bike, bike-share, bike, stations" />
     <meta name="author" content="Greg Milbourne">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="3 month">
-    
+    <!-- nyc, map, bike -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
@@ -247,14 +247,13 @@
             var state = contacts_array[i].MailingState;
             var lat =  contacts_array[i].MailingLatitude;
             var lng = contacts_array[i].MailingLongitude;
-            var group = contacts_array[i].Groups__c;
          	img='maps/nycbikes/cyclingRed.png'
             
             text = contactName
 
             var pt = new google.maps.LatLng(lat, lng);
 
-            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption> +</div>';
+            var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
             // side_html += '<tr> \
             //                 <td><a href="javascript:myclick(' + i + ')">' + stationName + '</a></td> \
             //                 <td>' + availBikes + '</td> \
