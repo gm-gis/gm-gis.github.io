@@ -132,7 +132,7 @@
     		var obj = contacts_array[i];
     		// console.log(obj.FirstName);
 		}
-		
+
 	</script>
 
     <script type="text/javascript">
@@ -152,7 +152,7 @@
       }
 
 
-      function createMarker(point,info,map) {
+      function createMarker(point,info,map,text) {
         var iconURL = img;
         var iconSize = new google.maps.Size(32,37);
         var iconOrigin = new google.maps.Point(0,0);
@@ -165,6 +165,10 @@
           anchor: iconAnchor
         };
        
+        var pinIcon = {
+    		url: 'http://chart.apis.google.com/chart?chst=d_bubble_text_small&chld=bbT|'+text+'|FF5733|FFFFFF'
+		};
+
 
         var iconShape = [3,3, 28,3, 28,28, 16,36, 3,28];
         var myMarkerShape = {
@@ -175,8 +179,8 @@
         var myMarkerOpts = {
           position: point,
           map: map,
-          icon: myIcon,
-          shape: myMarkerShape
+          icon: pinIcon,
+          // shape: myMarkerShape
         };
 
 
@@ -245,7 +249,7 @@
             var lng = contacts_array[i].MailingLongitude;
          	img='maps/nycbikes/cyclingRed.png'
             
-            
+            text = contactName
 
             var pt = new google.maps.LatLng(lat, lng);
 
@@ -256,7 +260,7 @@
             //                 <td>' + availDocks + '</td> \
             //               </tr>';
                       
-            createMarker(pt,html,myMap);
+            createMarker(pt,html,myMap,text);
           }
 
           var markerCluster = new MarkerClusterer(myMap, markers, {imagePath: 'images/m'} ); 
