@@ -260,7 +260,7 @@
             //                 <td>' + availDocks + '</td> \
             //               </tr>';
             
-            if ((city || state) && (Number(lat) != 0 || Number(lng) != 0)) {
+            if (city || state) && (lat||lng){
 
             	createMarker(pt,html,myMap,text);
 
