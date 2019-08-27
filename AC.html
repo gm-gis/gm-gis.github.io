@@ -125,12 +125,12 @@
     <script type="text/javascript" src="/maps/nycbikes/downloadxml.js"></script>
     <script type="text/javascript" src="/maps/nycbikes/markerclusterer.js"></script>
     <script type="text/javascript" src="/maps/nycbikes/sorttable.js"></script>
-    <script type="text/javascript" src="Contacts_pandas.json"></script>
+    <script type="text/javascript" src="snarky_wombat.json"></script>
     <script>
     	var contacts_array = contacts_list
     	for(var i = 0; i < contacts_array.length; i++) {
     		var obj = contacts_array[i];
-    		console.log(obj.FirstName);
+    		// console.log(obj.FirstName);
 }
 	</script>
 
@@ -240,8 +240,8 @@
             var contactName = contacts_array[i].FirstName + " " + contacts_array[i].LastName;
             var city = contacts_array[i].MailingCity
             var state = contacts_array[i].MailingState
-            var lat =  contacts_array[i].Latitude_MapAnything__c;
-            var lng = contacts_array[i].Longitude_MapAnything__c;
+            var lat =  contacts_array[i].MailingLatitude;
+            var lng = contacts_array[i].MailingLongitude;
          	img='maps/nycbikes/cyclingRed.png'
             
             
