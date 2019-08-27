@@ -259,8 +259,14 @@
             //                 <td>' + availBikes + '</td> \
             //                 <td>' + availDocks + '</td> \
             //               </tr>';
-                      
-            createMarker(pt,html,myMap,text);
+            
+            if (city || state){
+
+            	createMarker(pt,html,myMap,text);
+
+            	}
+
+            
           }
 
           var markerCluster = new MarkerClusterer(myMap, markers, {imagePath: 'images/m'} ); 
