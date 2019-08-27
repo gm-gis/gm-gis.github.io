@@ -251,6 +251,18 @@
             
             text = contactName
 
+        	// Taking a regular expression 
+			var re = /&/; 
+
+			// Taking a string as input 
+			var string = text 
+
+			// Calling replace() function to replace 
+			// GeeksForGeeks from string with gfg 
+			var newstring = string.replace(re, 'and'); 
+
+			text = newstring
+
             var pt = new google.maps.LatLng(lat, lng);
 
             var html = '<div id=\"Content\"><strong>' + 'Contact: '+ contactName + '</strong><br />' + '<caption>' + 'City: '  + city + '</caption><br />'+ '<caption>' + 'State: '  + state + '</caption>'+'</div>';
